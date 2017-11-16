@@ -7,8 +7,8 @@ import com.iamsdt.roomlivedataviewmodel.database.MyDatabase
 import com.iamsdt.roomlivedataviewmodel.database.table.Book
 
 /**
- * Created by Shudipto Trafder on 11/16/2017.
- */
+* Created by Shudipto Trafder Trafder on 11/16/2017.
+*/
 
 class AddViewModel(application: Application):
         AndroidViewModel(application){

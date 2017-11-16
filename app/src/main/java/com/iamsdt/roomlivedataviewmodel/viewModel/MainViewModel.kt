@@ -7,10 +7,6 @@ import com.iamsdt.roomlivedataviewmodel.database.MyDatabase
 import com.iamsdt.roomlivedataviewmodel.database.table.Book
 import android.os.AsyncTask
 
-
-
-
-
 /**
 * Created by Shudipto Trafder Trafder on 11/16/2017.
 */

@@ -50,9 +50,9 @@ class MainAdapter(private var list: List<Book>?,
 
     inner class MyViewHolder(view: View):
             RecyclerView.ViewHolder(view){
-        val bookName = view.bookName
-        val personName = view.personName
-        val date = view.date
+        val _bookName = view.bookName
+        val _personName = view.personName
+        val _date = view.date
     }
 
 }
