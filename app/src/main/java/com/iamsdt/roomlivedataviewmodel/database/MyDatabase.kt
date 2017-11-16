@@ -4,6 +4,7 @@ import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
+import com.iamsdt.roomlivedataviewmodel.database.dao.BookDao
 import com.iamsdt.roomlivedataviewmodel.database.table.Book
 
 /**
@@ -16,19 +17,23 @@ import com.iamsdt.roomlivedataviewmodel.database.table.Book
         exportSchema = false)
 abstract class MyDatabase:RoomDatabase(){
 
-    var instance:MyDatabase ?= null
 
-    private val dbName = "Book"
+    abstract val bookDao:BookDao
 
-    fun getDatabase(context: Context):MyDatabase{
+    companion object {
 
-        if (instance == null) {
-            instance = Room.databaseBuilder(context,
-                    MyDatabase::class.java,dbName).build()
+        var instance:MyDatabase ?= null
+        private val dbName = "Book"
+
+        fun getDatabase(context: Context):MyDatabase{
+
+            if (instance == null) {
+                instance = Room.databaseBuilder(context,
+                        MyDatabase::class.java,dbName).build()
+            }
+
+            return instance!!
         }
-
-        return instance!!
     }
-
 
 }
