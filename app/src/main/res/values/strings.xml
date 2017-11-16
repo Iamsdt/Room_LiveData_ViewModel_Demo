@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Room LiveData ViewModel</string>
     <string name="title_activity_add">AddActivity</string>
+    <string name="write_the_book_name">write the book name</string>
+    <string name="write_your_name">write your name</string>
+    <string name="your_name">Your Name</string>
+    <string name="book_name">Book name</string>
+    <string name="save">Pick a date</string>
 </resources>

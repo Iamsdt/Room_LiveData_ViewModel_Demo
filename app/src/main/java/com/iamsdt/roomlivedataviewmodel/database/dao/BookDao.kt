@@ -16,21 +16,21 @@ interface BookDao {
 
     //their is two option for get all data from table
     //one is by using member variable
-    @get:Query("Select * From Borrow")
+    @get:Query("Select * From Book")
     val getAllData:LiveData<List<Book>>
 
     //and another is like as usual function
-    @Query("Select * From Borrow")
+    @Query("Select * From Book")
     fun getData():LiveData<List<Book>>
 
 
-    //for single data
-    @Query("Select * From Borrow where id = :id")
-    fun getBorrowById(id: Int):Book
+//    //for single data
+//    @Query("Select * From Book where id = :_id")
+//    fun getBorrowById(_id:Int):Book
 
 
     @Delete
-    fun delete(book: Book):Int
+    fun delete(book:Book):Int
 
     @Update
     fun update(book: Book):Int

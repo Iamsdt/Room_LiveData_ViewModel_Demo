@@ -23,7 +23,7 @@ abstract class MyDatabase:RoomDatabase(){
     companion object {
 
         var instance:MyDatabase ?= null
-        private val dbName = "Book"
+        private val dbName = "BookDB"
 
         fun getDatabase(context: Context):MyDatabase{
 

@@ -1,5 +1,6 @@
 package com.iamsdt.roomlivedataviewmodel.database.table
 
+import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 import android.arch.persistence.room.TypeConverters
@@ -16,6 +17,20 @@ import java.util.*
 //@Entity(tableName = "TableName")
 
 @Entity
-class Book (@PrimaryKey (autoGenerate = true) val id:Int,
-              val bookName:String,val personName:String,
-              @TypeConverters(DateConverter::class)var date:Date)
+class Book() {
+
+    @PrimaryKey (autoGenerate = true)
+    var id:Int ?= null
+
+    var bookName:String ?= null
+    var personName:String ?= null
+
+    @TypeConverters(DateConverter::class)
+    var date:Date ?= null
+
+    constructor (bookName: String?, personName: String?, date: Date?):this() {
+        this.bookName = bookName
+        this.personName = personName
+        this.date = date
+    }
+}
