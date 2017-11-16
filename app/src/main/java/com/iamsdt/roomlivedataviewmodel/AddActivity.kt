@@ -15,13 +15,7 @@ import java.util.*
 class AddActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener {
 
     private var date: Date? = null
-    //private var datePickerDialog: DatePickerDialog? = null
     private var calendar: Calendar? = null
-
-    //private var bookNameEt: EditText? = null
-    //private var personNameEt: EditText? = null
-
-    //private var addViewModel: AddViewModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,16 +35,19 @@ class AddActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener {
 
 
         add_fab.setOnClickListener {
-            if (bookName.text != null && personName.text != null
-                    && date != null){
-                addViewModel.addBook(Book(bookName = bookName.text.toString(),
-                        personName = personName.text.toString(),
+
+            val book = bookName.text.toString()
+            val person = personName.text.toString()
+
+            if (book.isEmpty() ||  person.isEmpty()
+                    || date == null){
+                Toast.makeText(this,"Missing Fields",Toast.LENGTH_SHORT).show()
+            } else {
+                addViewModel.addBook(Book(bookName = book,
+                        personName = person,
                         date = date!!))
 
                 finish()
-
-            } else {
-                Toast.makeText(this,"Missing Fields",Toast.LENGTH_SHORT).show()
             }
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -61,6 +58,8 @@ class AddActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener {
         calendar!!.set(Calendar.MONTH, month)
         calendar!!.set(Calendar.DAY_OF_MONTH, dayOfMonth)
         date = calendar!!.time
+
+        dateTv.text = date.toString()
     }
 
 }

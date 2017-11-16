@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.iamsdt.roomlivedataviewmodel.R
 import com.iamsdt.roomlivedataviewmodel.database.table.Book
 import kotlinx.android.synthetic.main.item_row.view.*
@@ -50,9 +51,9 @@ class MainAdapter(private var list: List<Book>?,
 
     inner class MyViewHolder(view: View):
             RecyclerView.ViewHolder(view){
-        val _bookName = view.bookName
-        val _personName = view.personName
-        val _date = view.date
+//        val bookName: TextView = view.bookName
+//        val personName: TextView = view.personName
+//        val date: TextView = view.date
     }
 
 }
